@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+
+  <head>
+    <link rel="stylesheet" href="style.css">
+    <script ></script>
+  </head>
+
+  <body>
+    <h1>accept 025468 the output should be 0-2-54-6-8</h1>
+    <script>
+//variables 
+    var arr = [] , odd = 0  ;
+//enter numbers
+      var input = prompt("enter numbers: ");
+//convert to array
+      input = input.split("");
+//check even numbers
+        outer_loop: for (let num of input) {
+          //verify all numercial content 
+           inner_loop: for (let num of input) {
+              if(  !isNaN ( num ) ) {
+                continue ;//inner_loop;
+              } else {
+                  console.log("non numerical input");
+                  break outer_loop;
+              }
+            }
+          if( num % 2 == 0) {
+              arr.push( Number ( String(odd) + num ) );
+              odd = 0;
+            } else odd += num; 
+        }
+        arr = arr.toString().replace(/,/g , '-');
+        console.log( arr );
+    </script>
+  </body>
+
+</html>
